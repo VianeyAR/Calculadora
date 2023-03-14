@@ -1,6 +1,37 @@
+import { useState } from 'react';
 import './App.css'
 
+const buttonsClass = 'btn btn-info w-75 mt-2'
+
 function App() {
+const [screen, setScreen] = useState('0');
+
+const handleButtonClick = () => {
+   if(screen === '0'){
+    setScreen ('9');
+   } else {
+   setScreen(`${screen}9`);
+
+   }
+};
+
+const handleButtonClick7 = () => {
+   if(screen === '0'){
+    setScreen ('7');
+   } else {
+   setScreen(`${screen}7`);
+
+   }
+};
+
+const handleButtonClick8 = () => {
+   if(screen === '0'){
+    setScreen ('8');
+   } else {
+   setScreen(`${screen}8`);
+
+   }
+};
 
   return (
     <div className='app'>
@@ -13,7 +44,7 @@ function App() {
           <td colSpan={4} style={{
             border: '1px solid black', textAlign: 'end'
             }}>
-            <h2>0</h2>
+            <h2>{screen}</h2>
           </td>
         </tr>
 
@@ -22,22 +53,22 @@ function App() {
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>C</button>
+             className={buttonsClass}>C</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>/</button>
+             className={buttonsClass}>/</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>*</button>
+             className={buttonsClass}>*</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>-</button>
+             className={buttonsClass}>-</button>
           </td>
         </tr>
 
@@ -46,22 +77,29 @@ function App() {
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>7</button>
+             className={buttonsClass}
+             onClick={handleButtonClick7}>7</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>8</button>
+             className={buttonsClass}
+             onClick={handleButtonClick8}>8</button>
           </td>
+
+
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>9</button>
+             className={buttonsClass}
+             onClick={handleButtonClick}>9</button>
           </td>
+
+
           <td rowSpan={2}>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'
+             className={buttonsClass}
              style={{height:"85px"}}>+</button>
           </td>
         </tr>
@@ -71,17 +109,17 @@ function App() {
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>4</button>
+             className={buttonsClass}>4</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>5</button>
+             className={buttonsClass}>5</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>6</button>
+             className={buttonsClass}>6</button>
           </td>
         </tr>
 
@@ -90,22 +128,22 @@ function App() {
           <td>
             <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>1</button> 
+             className={buttonsClass}>1</button> 
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>2</button>
+             className={buttonsClass}>2</button>
           </td>
           <td>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>3</button>
+             className={buttonsClass}>3</button>
           </td>
           <td rowSpan={2}>
           <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'
+             className={buttonsClass}
              style={{height: "85px"}}>=</button>
           </td>
         </tr>
@@ -125,7 +163,7 @@ function App() {
           <td>
             <button 
              tipe='button' 
-             className='btn btn-info w-75 mt-2'>.</button>
+             className={buttonsClass}>.</button>
           </td>
         </tr>
 
