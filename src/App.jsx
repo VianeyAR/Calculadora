@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css'
+import Button from './components/Button';
 
 const buttonsClasses = 'btn btn-info w-75 mt-2';
 
@@ -60,7 +61,13 @@ function App() {
         result = a*b;
         break;
       case '/':
+        if(b === 0){
+          result = 'Infinito'
+          setClearScreen(true)
+       
+        }else{
         result = a/b;
+        }
         break;
       default:
         break
@@ -188,13 +195,20 @@ function App() {
 
         {/*FIFTH ROW*/}
         <tr>
-          <td>
+          {/*<td>
             <button type='button' 
              className={buttonsClasses}
              value='1'
              onClick={(e) => handleButtonClick(e)}
              >1</button> 
-          </td>
+          </td>*/}
+           <Button 
+           Classes={buttonsClasses}
+           handleClick={handleButtonClick}
+           rows='1'
+           style={{}}
+           value='1'
+           />
 
           <td>
             <button type='button' 
@@ -249,6 +263,8 @@ function App() {
           </td>
         </tr>
       </table>
+     
+
     </div>
   )
 }
